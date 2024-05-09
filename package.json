@@ -1,0 +1,16 @@
+{
+  "name": "parcel-transformer-ink",
+  "version": "1.0.0",
+  "description": "Compiles the ink story format to its JSON equivalent",
+  "engines": {
+    "parcel": "2.x"
+  },
+  "main": "src/index.js",
+  "author": "Jesse Himmelstein <jesse@heavenstone.net>",
+  "license": "MIT",
+  "keywords": [
+    "parcel",
+    "ink",
+    "inkjs"
+  ]
+}
