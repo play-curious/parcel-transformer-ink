@@ -1,6 +1,7 @@
 "use strict";
 
 const { Transformer } = require("@parcel/plugin");
+const diagnostic = require("@parcel/diagnostic");
 const { Compiler } = require("inkjs");
 const {
   PosixFileHandler,
@@ -14,7 +15,10 @@ module.exports = new Transformer({
     // Compile it
     const fileHandler = new PosixFileHandler();
     const errorHandler = (message, errorType) => {
-      console.error("Ink File Handler: " + message + "\n");
+      throw {
+        message,
+        codeFrame: asset.filePath,
+      };
     };
     const compiler = new Compiler(source, { fileHandler, errorHandler });
     const result = compiler.Compile().ToJson();
